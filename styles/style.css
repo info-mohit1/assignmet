@@ -1,0 +1,55 @@
+/* --- External Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* --- Tailwind Configuration --- */
+@import "tailwindcss";
+
+@theme {
+  --color-clifford: #da373d;
+  --breakpoint-md: 576px;
+  --breakpoint-lg: 992px;
+}
+
+/* --- Base Global Styles --- */
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+/* --- Improved Global Transition Defaults --- */
+button, li, a, .cursor-pointer {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* --- Gradient Animation Utility --- */
+.animate-gradient {
+  background-size: 200% auto;
+  /* Changed to ease-in-out for smoother color oscillation */
+  animation: gradientFlow 4s ease-in-out infinite;
+}
+
+/* --- Keyframe Definitions --- */
+@keyframes gradientFlow {
+  0% { 
+    background-position: 0% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+  100% { 
+    background-position: 0% 50%;
+  }
+}
+
+/* Slow rotation for hero elements */
+@keyframes slowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-slow-rotate {
+  animation: slowRotate 20s linear infinite;
+}
